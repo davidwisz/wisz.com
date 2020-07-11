@@ -1,3 +1,2 @@
 # wisz.com
-My personal website
-I'm redesigning my old website.
+My personal website ~ I'm redesigning my old website.
