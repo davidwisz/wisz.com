@@ -40,9 +40,6 @@ const wisz = {
       wisz.assignPhotoClickHandlers('#photo-modal .photo-trigger', 'photo-trigger');
       photoModal.classList.add('ready');
     }
-
-    // ADD CLICK EVENT LISTENER TO THUMBNAILS TO SWAP IN PHOTO SRC BUT ALSO DEACTIVATE SELECTED THUMB
-
   },
   
   assignPhotoClickHandlers: function(selector, nameOfClass) {
@@ -65,11 +62,14 @@ const wisz = {
 			photoModal.style.opacity = 0;
 			photoModal.style.display = 'none';
 			document.getElementById('photo-modal-img').src = '/assets/img/loading.gif';
-		}
+    }
+    else if (clickeeHref == 'collab-symbol') {
+      document.getElementById('collab-symbol').style.animation = 'none';
+    }
 		else {
 			document.getElementById(clickeeHref).style.display = 'none';
 		}
-	},
+  },
 
 	copyrightDate: function() {
   	document.getElementById('year').innerHTML = new Date().getFullYear();

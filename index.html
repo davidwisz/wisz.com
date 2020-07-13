@@ -15,7 +15,7 @@
   <style type="text/css">
     @font-face{font-family:"AvenirNext";font-weight:400;font-style:normal;font-display:auto;src:url("/assets/fonts/AvenirNext-Regular.woff2") format("woff2"),url("/assets/fonts/AvenirNext-Regular.woff") format("woff")}@font-face{font-family:"AvenirNext";font-weight:500;font-style:normal;font-display:auto;src:url("/assets/fonts/AvenirNext-Medium.woff2") format("woff2"),url("/assets/fonts/AvenirNext-Medium.woff") format("woff")}@font-face{font-family:"AvenirNext";font-weight:600;font-style:normal;font-display:auto;src:url("/assets/fonts/AvenirNext-Demi.woff2") format("woff2"),url("/assets/fonts/AvenirNext-Demi.woff") format("woff")}@font-face{font-family:"AvenirNext";font-weight:700;font-style:normal;font-display:auto;src:url("/assets/fonts/AvenirNext-Bold.woff2") format("woff2"),url("/assets/fonts/AvenirNext-Bold.woff") format("woff")}
   </style>
-  <link rel="stylesheet" type="text/css" href="/assets/css/wisz.css?v=2" />
+  <link rel="stylesheet" type="text/css" href="assets/css/wisz.css?v=2" />
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-172044436-1"></script>
@@ -23,7 +23,6 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'UA-172044436-1');
   </script>
 
@@ -128,7 +127,10 @@
       <section class="section color-scheme-four collaboration" id="collaboration">
         <h3 class="heading-main">Valuable Team Member</h3>
         <article>
-          <img src="/assets/img/collaboration-symbol-blue.gif" class="collab-symbol rotate" />
+          <figure class="img-container" id="img-container">
+            <img src="/assets/img/collaboration-symbol-blue.gif" class="collab-symbol rotate" id="collab-symbol" />
+            <a class="close-button" href="collab-symbol"><i class="fas fa-times" alt="Pause" title="Pause"></i></a>
+          </figure>
           <ul>
             <li>I collaborate well with Designers, Engineers, and Product Teams, on project planning and priorities; helping determine product road maps and project schedules; assessing a dev timeline's feasibility; and identifying granularities within larger stories for isolated, phased rollouts (deadline trade-offs).</li>
             <li>I love learning from teammates across disciplines, pair-programming, and collaborating in general.</li>
@@ -166,12 +168,16 @@
 
   <footer class="container-fluid color-scheme-four">
     <section class="section">
+      <div class="social-icons">
+        <a href="https://www.linkedin.com/in/dwisz"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/davidwisz"><i class="fab fa-github-square"></i></a>
+      </div>
       Copyright <span id="year"></span> David Wisz
     </section>
   </footer>
 
   <script async src="https://kit.fontawesome.com/8fface612f.js" crossorigin="anonymous"></script>
-  <script src="/assets/js/wisz.js?v=2"></script>
+  <script src="assets/js/wisz.js?v=2"></script>
 
 </body>
 </html>

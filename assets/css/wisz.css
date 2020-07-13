@@ -154,10 +154,33 @@ header {
   padding: 60px;
 }
 
-.collab-symbol {
-  float: right; 
-  height: 263px; 
-  margin: 30px 90px 10px 10px; 
+.img-container {
+  float: right;
+  height: 263px;
+  margin: 30px 90px 10px 10px;
+  position: relative;
+  width:263px;
+}
+
+.img-container .close-button {
+  background-color: transparent;
+  border-radius: 14px;
+  border-width: 1px;
+  font-size: 16px;
+  height: 28px;
+  width: 28px;
+}
+
+.img-container .close-button i {
+  border-width: 1px;
+  height: 26px;
+  line-height: 28px;
+  margin-left: 8px;
+  width: 26px;
+}
+
+.collab-symbol { 
+  height: 263px;  
   width: 263px;
 }
 
@@ -288,7 +311,7 @@ header {
   width: 32px;
 }
 
-.close-button:hover, .close-button:focus, .close-button:active  {
+.close-button:hover, .close-button:focus, .close-button:active {
   color: #120029;
 }
 
@@ -308,6 +331,20 @@ footer {
   padding: 45px 15px;
 }
 
+.social-icons {
+  margin-bottom: 30px;
+}
+
+.social-icons a, .social-icons a:hover, .social-icons a:active {
+  color: #120029;
+  font-size: 1.5em;
+  margin-right: 15px;
+}
+
+.social-icons a:last-child {
+  margin-right: 0;
+}
+
 /* TABLETS AND PHONES */
 @media only screen and (max-device-width : 1024px) {
   
@@ -324,6 +361,13 @@ footer {
     position: relative;
   }
 
+}
+
+/* SMALLER BROWSER WIDTH */
+@media only screen and (max-width : 1120px) {
+  h1 {
+    font-size: 6.5rem;
+  }
 }
 
 /* TABLETS, PORTRAIT */
