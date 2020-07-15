@@ -59,6 +59,10 @@ h3 {
 .center, section.center {
   text-align: center;
 }
+
+.left {
+  text-align: left;
+}
   
 header {
   overflow: hidden;
@@ -116,8 +120,8 @@ header {
   opacity: 1;
 }
 
-.intro ul {
-  text-align: left;
+.intro .btn-primary {
+  margin-left: 20px;
 }
 
 .boxes {
