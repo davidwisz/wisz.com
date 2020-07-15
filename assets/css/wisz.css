@@ -275,6 +275,7 @@ h1.animate {
   font-size: 1.6rem;
   font-weight: 800;
   padding: 8px 32px;
+  transition: transform ease-in-out .25s;
 }
 
 .btn-primary:focus, 
@@ -290,6 +291,7 @@ h1.animate {
   border-color: #fad339;
   box-shadow: none !important;
   outline: none !important;
+  transform: scale(1.1);
 }
 
 .photo-modal {
