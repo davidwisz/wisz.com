@@ -65,6 +65,7 @@ const wisz = {
     }
     else if (clickeeHref == 'collab-symbol') {
       document.getElementById('collab-symbol').style.animation = 'none';
+      thisClickee.style.display = 'none';
     }
 		else {
 			document.getElementById(clickeeHref).style.display = 'none';
