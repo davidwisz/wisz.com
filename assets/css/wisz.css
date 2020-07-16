@@ -59,10 +59,6 @@ h3 {
 .center, section.center {
   text-align: center;
 }
-
-.left {
-  text-align: left;
-}
   
 header {
   overflow: hidden;
@@ -104,20 +100,11 @@ header {
   opacity: 0;
 }
 
-.profile-photo.animate {
-  animation: slide-up 1.2s ease;
-  opacity: 1;
-}
-
 .intro article {
   float: left;
   max-width: 550px;
   opacity: 0;
-}
-
-.intro article.animate {
-  animation: slide-up .9s ease;
-  opacity: 1;
+  text-align: left;
 }
 
 .intro .btn-primary {
@@ -265,6 +252,16 @@ h1.animate {
   opacity: 1;
 }
 
+.profile-photo.animate {
+  animation: slide-up 1.2s ease;
+  opacity: 1;
+}
+
+.intro article.animate {
+  animation: slide-up .9s ease;
+  opacity: 1;
+}
+
 /* ==========
   COMPONENTS
 ========== */
@@ -364,15 +361,15 @@ h1.animate {
   border-radius: 14px;
   border-width: 1px;
   font-size: 16px;
-  height: 27px;
-  width: 27px;
+  height: 28px;
+  width: 28px;
 }
 
 .img-container .close-button i {
   border-width: 1px;
   height: 26px;
   line-height: 27px;
-  margin-left: 7px;
+  margin-left: 8px;
   width: 26px;
 }
 
@@ -412,6 +409,19 @@ h1.animate {
 /* TABLETS AND PHONES */
 @media only screen and (max-device-width : 1024px) {
   
+  /* centering primary button for smaller screen widths */
+  .intro article {
+    text-align: center;
+  }
+
+  .intro ul {
+    text-align: left;
+  }
+
+  .intro .btn-primary {
+    margin-left: auto;
+  }
+
   .img-container {
     float: none;
     position: absolute;
@@ -423,6 +433,19 @@ h1.animate {
   .section.collaboration > article {
     padding-bottom: 300px;
     position: relative;
+  }
+
+  .boxes {
+    justify-content: center
+  }
+  
+  .boxes li {
+    border-width: 2px;
+    font-size: 40px;
+    margin-right: 10px;
+    max-height: 80px;
+    max-width: 80px;
+    padding: 12px;
   }
 
 }
@@ -446,10 +469,6 @@ h1.animate {
     margin: 30px auto;
   }
 
-  .boxes {
-    justify-content: center
-  }
-
 }
 
 /* TABLETS -> LANDSCAPE */
@@ -457,6 +476,29 @@ h1.animate {
 
   h1 {
     font-size: 7.5rem;
+  }
+
+  /* RE-aligning primary button left for ipad landscape */
+  .intro article {
+    text-align: left;
+  }
+
+  .intro .btn-primary {
+    margin-left: 20px;
+  }
+
+  /* RE-sizing extracurricular boxes for ipad landscape */
+  .boxes {
+    justify-content: space-evenly;
+  }
+  
+  .boxes li {
+    border-width: 5px;
+    font-size: 120px;
+    margin-right: 50px;
+    max-height: none;
+    max-width: none;
+    padding: 40px;
   }
 
 }
@@ -503,19 +545,16 @@ h1.animate {
     padding: 15px;
   }
 
-  .boxes {
-    justify-content: center
-  }
-  
-  .boxes li {
-    font-size: 80px;
-    margin-right: 0;
-    padding: 20px;
-  }
-
   @media (min-device-width : 375px) {
     header > h1 {
       font-size: 2.84rem;
+    }
+  }
+
+  /* SMALLER PHONE WIDTH, e.g., IPHONE 5 */
+  @media only screen and (max-width : 320px) {
+    .btn-primary {
+      font-size: 1.3rem;
     }
   }
 
