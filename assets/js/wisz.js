@@ -75,6 +75,13 @@ const wisz = {
 	copyrightDate: function() {
   	document.getElementById('year').innerHTML = new Date().getFullYear();
   },
+
+  ieWorkaround: function(selector) {
+    let targets = document.querySelectorAll(selector);
+    for (let i=0; i < targets.length; i++) {
+      targets[i].style.opacity = '1';
+    }
+  },
   
 
 }
@@ -91,10 +98,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
   else {
-    document.querySelector('h1').style.opacity = '1';
-    document.querySelector('.intro h3').style.opacity = '1';
-    document.querySelector('.intro article').style.opacity = '1';
-    document.querySelector('.profile-photo').style.opacity = '1';
+    wisz.ieWorkaround('.above-fold');
   }
   
 	
