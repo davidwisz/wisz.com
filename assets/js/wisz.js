@@ -90,11 +90,13 @@ const wisz = {
 document.addEventListener('DOMContentLoaded', function() {
   if (document.fonts) {
     document.fonts.ready.then(function () {
-      document.querySelector('h1').classList.add('animate');
-      document.querySelector('.intro h3').classList.add('animate');
-      document.querySelector('.intro article').classList.add('animate');
-      document.querySelector('.profile-photo').classList.add('animate');
-      
+      let targets = document.querySelectorAll('.above-fold');
+      targets.forEach((target) => target.classList.add('animate'));
+      /*h1
+      .intro h3
+      .intro article
+      .profile-photo
+      */
     });
   }
   else {
