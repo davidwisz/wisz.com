@@ -47,6 +47,15 @@ h3 {
   text-align: left;
 }
 
+.portfolio h3 {
+  margin-bottom: 1.5em;
+}
+
+.slightly-bold {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
 
 /* ==========
   LAYOUT
@@ -109,6 +118,54 @@ header {
 
 .intro .btn-primary {
   margin-left: 20px;
+}
+
+.portfolio-container {
+  display: none;
+}
+
+.wordpress-list {
+  font-size: 1.1rem;
+  list-style-type: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.wordpress-list strong {
+  font-size: 1.4rem;
+}
+
+.wordpress-list a {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 45px;
+}
+
+.wordpress-list a, .wordpress-list a:hover, .wordpress-list a:active {
+  color: #120029;
+  text-decoration: none;
+}
+
+.wordpress-list .flex-img {
+  flex: 0 0 300px;
+  margin-right: 35px;
+}
+
+.wordpress-list img {
+  border: 5px solid #fff;
+  border-radius: 5px;
+  box-shadow: 0px 3px 15px rgba(0,0,0,0.3);
+  width: 100%;
+}
+
+.wordpress-list .flex-text {
+  flex: 1 0 540px;
+  white-space: normal;
+}
+
+.wordpress-list ul {
+  list-style-type: disc;
+  margin-top: 15px;
 }
 
 .boxes {
@@ -418,7 +475,7 @@ h1.animate {
 }
 
 /* TABLETS AND PHONES */
-@media only screen and (max-device-width : 1024px) {
+@media only screen and (max-width : 1024px) {
   
   /* centering primary button for smaller screen widths */
   .intro article {
@@ -444,6 +501,19 @@ h1.animate {
   .section.collaboration > article {
     padding-bottom: 300px;
     position: relative;
+  }
+
+  .wordpress-list a {
+    flex-wrap: wrap;
+  }
+
+  .wordpress-list .flex-img {
+    margin-bottom: 15px;
+  }
+
+  .wordpress-list .flex-text {
+    flex-basis: 100%;
+    margin-bottom: 35px;
   }
 
   .boxes {
@@ -557,16 +627,28 @@ h1.animate {
   }
 
   @media (min-device-width : 375px) {
+
     header > h1 {
       font-size: 2.84rem;
     }
+
   }
 
   /* SMALLER PHONE WIDTH, e.g., IPHONE 5 */
   @media only screen and (max-width : 320px) {
+
     .btn-primary {
       font-size: 1.3rem;
     }
+
+    .wordpress-list .flex-img {
+      max-width: 280px;
+    }
+  
+    .wordpress-list .flex-text {
+      font-size: 1.2rem;
+    }
+
   }
 
 }

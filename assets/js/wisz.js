@@ -1,11 +1,5 @@
-//Onload check for font load, then run animation on header and hero content
-//Onscroll animation as content enters reading pane/screen
+//TODO:
 //Color scheme switcher
-
- /* TEST CROSSBROWSER
- Photo popover
- Copyright date
- */
 
 const wisz = {
 
@@ -22,9 +16,6 @@ const wisz = {
 		let photoModal = document.getElementById('photo-modal');
 		photoModal.style.display = 'block';
 		photoModal.style.opacity = '1';
-		/*var topNumberOne = document.body.scrollTop + 10;
-		var topNumberTwo = document.querySelector('main').scrollTop + 10;
-    var tn = topNumberOne > topNumberTwo ? topNumberOne : topNumberTwo;*/
     
     // POSITION THE MODAL
 		let topNumber = window.pageYOffset + 10;
@@ -72,6 +63,25 @@ const wisz = {
 		}
   },
 
+  populatePortfolio: function(thisUrl, yPos) {
+    axios.get(thisUrl)
+      .then(function (response) {
+        // handle success
+        document.getElementById('portfolio').innerHTML = response.data;
+      })
+      .catch(function (error) {
+        // handle error
+        console.log(error);
+      })
+      .then(function () {
+        window.scroll({
+          left: 0,
+          top: yPos -45,
+          behavior: 'smooth'
+        });
+      });
+  },
+
 	copyrightDate: function() {
   	document.getElementById('year').innerHTML = new Date().getFullYear();
   },
@@ -82,6 +92,16 @@ const wisz = {
       targets[i].style.opacity = '1';
     }
   },
+
+  findYPos: function(el) {
+    var curtop = 0;
+    if (el.offsetParent) {
+        do {
+            curtop += el.offsetTop;
+        } while (el = el.offsetParent);
+    return [curtop];
+    }
+  }
   
 
 }
@@ -92,18 +112,18 @@ document.addEventListener('DOMContentLoaded', function() {
     document.fonts.ready.then(function () {
       let targets = document.querySelectorAll('.above-fold');
       targets.forEach((target) => target.classList.add('animate'));
-      /*h1
-      .intro h3
-      .intro article
-      .profile-photo
-      */
     });
   }
   else {
     wisz.ieWorkaround('.above-fold');
   }
+
+  if (document.location.hash === '#wordpress') {
+    document.querySelector('.portfolio-container').style.display = 'block';
+    let yPos = wisz.findYPos(document.getElementById('portfolio'));
+    wisz.populatePortfolio('/wordpress.html', yPos[0]);
+  }
   
-	
 	//CLICK HANDLER TO OPEN PHOTO POPOVER
 	wisz.assignPhotoClickHandlers('.photo-trigger', 'photo-trigger')
 	
