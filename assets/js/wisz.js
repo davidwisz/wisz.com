@@ -46,7 +46,7 @@ const wisz = {
   },
 	
 	closeButton: function(thisClickee) {
-    let clickeeHref = thisClickee.getAttribute('href');
+    let clickeeHref = thisClickee.getAttribute('data-href');
 		if (clickeeHref == 'photo-modal') {
 			let photoModal = document.getElementById('photo-modal');
 			photoModal.style.top = '10000px';
