@@ -74,11 +74,14 @@ const wisz = {
         console.log(error);
       })
       .then(function () {
-        window.scroll({
-          left: 0,
-          top: yPos -45,
-          behavior: 'smooth'
-        });
+        if (localStorage.getItem('portfolio') !== 'wordpress') {
+          window.scroll({
+            left: 0,
+            top: yPos -45,
+            behavior: 'smooth'
+          });
+          localStorage.setItem('portfolio','wordpress');
+        }
       });
   },
 
@@ -118,7 +121,7 @@ document.addEventListener('DOMContentLoaded', function() {
     wisz.ieWorkaround('.above-fold');
   }
 
-  if (document.location.hash === '#wordpress') {
+  if (document.location.hash === '#wordpress' || localStorage.getItem('portfolio') === 'wordpress') {
     document.querySelector('.portfolio-container').style.display = 'block';
     let yPos = wisz.findYPos(document.getElementById('portfolio'));
     wisz.populatePortfolio('/wordpress.html', yPos[0]);
