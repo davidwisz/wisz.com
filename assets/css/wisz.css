@@ -13,8 +13,8 @@
 ========== */
 
 body {
-  font-family: "AvenirNext", Arial, Helvetica, sans-serif;
-  font-size: 1.4rem;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-size: 1.3rem;
 }
 
 ul {
@@ -32,28 +32,27 @@ li {
 ========== */
 
 h1 {
-  font-family: "Bungee Shade";
-  font-size: 8.5rem;
-  letter-spacing: .05em;
+  font-family: "Pacifico", cursive;
+  font-size: 7.5rem;
+  letter-spacing: -.01em;
   margin: 0;
   opacity: 0;
   text-align: center;
+  text-shadow: 5px 5px #2e3d3f;
+  transition: font-family .5s ease-in, font-size .5s ease-in;
 }
 
 h3 {
+  font-family: "Oswald", Arial, Helvetica, sans-serif;
   font-size: 2.5rem;
   font-weight: 800;
   margin-bottom: .75em;
   text-align: left;
+  transition: font-family .5s ease-in, font-size .5s ease-in;
 }
 
 .portfolio h3 {
   margin-bottom: 1.5em;
-}
-
-.slightly-bold {
-  font-size: 1.1rem;
-  font-weight: 600;
 }
 
 
@@ -71,7 +70,7 @@ h3 {
   
 header {
   overflow: hidden;
-  padding: 15px;
+  padding: 25px 15px;
   position: relative;
   text-align: center;
 }
@@ -100,7 +99,7 @@ header {
 }
 
 .profile-photo {
-  border: 5px solid #fff;
+  border: 5px solid #8ab3a1;
   border-radius: 5px;
   box-shadow: 0px 3px 15px rgba(0,0,0,0.3);
   width: 212px;
@@ -142,7 +141,7 @@ header {
 }
 
 .wordpress-list a, .wordpress-list a:hover, .wordpress-list a:active {
-  color: #120029;
+  color: #f9f9f9;
   text-decoration: none;
 }
 
@@ -156,6 +155,10 @@ header {
   border-radius: 5px;
   box-shadow: 0px 3px 15px rgba(0,0,0,0.3);
   width: 100%;
+}
+
+.wordpress-list a:hover img, .wordpress-list a:active img {
+  border-color: #8ab3a1;
 }
 
 .wordpress-list .flex-text {
@@ -178,11 +181,11 @@ header {
 }
 
 .boxes li {
-  background-color: #fbe076;
-  border: 5px solid #120029;
+  background-color: #f9f9f9;
+  border: 5px solid #2e3d3f;
   border-radius: 5px;
   box-shadow: 0px 3px 15px rgba(0,0,0,0.15);
-  color: #120029;
+  color: #2e3d3f;
   cursor: pointer;
   flex: 1;
   font-size: 120px;
@@ -198,8 +201,8 @@ header {
 }
 
 .boxes li:hover {
-  border-color: #fff;
-  color: #fff;
+  border-color: #e9835d;
+  color: #e9835d;
 }
 
 .photo-modal .boxes {
@@ -209,21 +212,18 @@ header {
 }
 
 .photo-modal .boxes li {
-  background-color: #fff;
-  border: 2px solid #120029;
+  background-color: #2e3d3f;
+  border: 2px solid #cffde5;
   border-radius: 2px;
   box-shadow: none;
-  color: #120029;
+  color: #cffde5;
   font-size: 30px;
   margin-right: 15px;
   max-width: 70px;
   padding: 5px;
 }
 
-.photo-modal .boxes li:hover {
-  border-color: #fbe076;
-  color: #fbe076;
-}
+
 
 footer .section {
   text-align: center;
@@ -240,49 +240,40 @@ footer {
 ========== */
 
 .color-scheme-one {
-  background-color: #120029;
+  background-color: #e9835d;
   color: #fff;
+  transition: all .5s ease-in;
+}
+
+.color-scheme-one.gradient {
+  background: #e9835d;
+  background: linear-gradient(#de683b, #e9835d);
 }
 
 .color-scheme-three, 
 .color-scheme-three code  {
-  background-color: #fbe076;
-  color: #120029;
+  background-color: #f9f9f9;
+  color: #2e3d3f;
+  transition: all .5s ease-in;
 }
 
 .color-scheme-four, 
 .color-scheme-four code {
-  background-color: #aee2d4;
-  color: #120029;
+  background-color: #2e3d3f;
+  color: #f9f9f9;
+  transition: all .5s ease-in;
 }
 
 .background-geometric {
   background-attachment: fixed;
   background-image: url(/assets/img/background-geometric.png);
   background-position: 0 20px;
-  background-size: 600px;
+  background-size: 200px;
 }
 
 /* ==========
   ANIMATIONS
 ========== */
-
-.rotate {
-  animation: rotate 45s infinite linear;
-}
-
-.rotate:hover {
-  animation: none;
-}
-
-@keyframes rotate {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(359deg);
-  }
-}
 
 @keyframes slide-up {
   from {
@@ -330,21 +321,105 @@ h1.animate {
   transform: translateY(0);
 }
 
+.fa-bg, .fa-bg p, .fa-bg ul {
+  position: relative;
+}
+
+.fa-bg p, .fa-bg ul {
+  z-index: 2000;
+}
+
+.fa-bg:before {
+  color: #e7eeeb;
+  content: "\f411";
+  font-family: "Font Awesome 5 Brands";
+  font-size: 32rem;
+  font-weight: 400;
+  line-height: 1.8em;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1000;
+}
+
+.fa-bgg i {
+  color: #e7eeeb;
+  font-size: 32rem;
+  font-weight: 400;
+  line-height: 1.8em;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1000;
+}
+
+.fa-bg.more-skills:before {
+  content: "\f121";
+  font-family: "Font Awesome 5 Pro";
+  font-weight: 100;
+  line-height: 1.2em;
+}
+
+/*
+.fa-bgg.more-skills i {
+  font-weight: 100;
+  line-height: 1.2em;
+}
+*/
 /* ==========
   COMPONENTS
 ========== */
 
+.style-switcher-container {
+  position:absolute; 
+  right: 15px;
+  text-align: right;
+  top: 15px; 
+  width: 400px; 
+  height: 100px;
+}
+
+.style-prompt {
+  cursor: pointer;
+  display: block;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 14px;
+  position: absolute;
+  right: 0;
+}
+
+.style-component {
+  font-size: 1rem;
+  height: 0;
+  overflow: hidden;
+  transition: width .25s ease-in-out, height .25s ease-in-out;
+  width: 0;
+}
+
+.style-component.reveal {
+  display: block;
+  height: 150px;
+  width: 400px;
+}
+
+.style-switcher {
+  border-radius: 5px;
+  margin-left: 10px;
+  outline: none;
+  outline-width: 0;
+}
+
 /* overwriting default Bootstrap button styles */
 .btn-primary {
-  color: #120029;
-  background-color: #fbe076;
-  border-color: #fbe076;
+  background-color: #cffde5;
+  border-color: #cffde5;
+  color: #2e3d3f;  
   border-radius: .45rem;
   box-shadow: 0px 3px 15px rgba(0,0,0,0.3);
   font-size: 1.6rem;
   font-weight: 800;
   padding: 8px 32px;
-  transition: transform ease-in-out .25s;
+  transition: transform ease-in-out .25s, color ease-in-out .25s;
 }
 
 .btn-primary:focus, 
@@ -355,17 +430,17 @@ h1.animate {
 .btn-primary:not(.disabled).active, 
 .btn-primary:not(:disabled):not(.disabled):active, 
 .btn-primary:not(.disabled):active {
-  color: #120029;
-  background-color: #fad339;
-  border-color: #fad339;
+  background-color: #8ab3a1;
+  border-color: #8ab3a1;
+  color: #fff;
   box-shadow: none !important;
   outline: none !important;
   transform: scale(1.1);
 }
 
 .photo-modal {
-  background-color: #aee2d4;
-  border: 1px solid #120029;
+  background-color: #2e3d3f;
+  border: 1px solid #f9f9f9;
   border-radius: 5px;
   box-shadow: 0px 3px 15px rgba(0,0,0,0.3);
   display: none;
@@ -383,7 +458,7 @@ h1.animate {
 }
 
 .photo-modal-img {
-  border: 2px solid #fff;
+  border: 2px solid #f9f9f9;
   border-radius: 5px;
   margin: 10px auto;
   max-width: 95%;
@@ -394,6 +469,7 @@ h1.animate {
   border: 2px solid #120029;
   border-radius: 16px;
   color: #120029;
+  cursor: pointer;
   display: block;
   font-size: 20px;
   height: 32px;
@@ -401,6 +477,21 @@ h1.animate {
   right: -7px;
   top: -7px;
   width: 32px;
+}
+
+.style-component .close-button:not([href]) {
+  background-color: #f9f9f9;
+  border: 1px solid #2e3d3f;
+  border-radius: 10px;
+  color: #2e3d3f;
+  display: inline-block;
+  font-size: 14px;
+  height: 20px;
+  margin-left: 12px;
+  position: relative;
+  right: auto;
+  top: auto;
+  width: 20px;
 }
 
 .close-button:hover, 
@@ -416,46 +507,56 @@ h1.animate {
   width: 32px;
 }
 
+.style-component .close-button i {
+  display: block;
+  height: 12px;
+  line-height: 20px;
+  margin-left: -1px;
+  width: 15px;
+}
+
 .img-container {
   float: right;
   height: 263px;
-  margin: 30px 90px 10px 10px;
+  margin: 10px 60px 30px 40px;
   position: relative;
-  width:263px;
+  width: 263px;
+}
+
+.img-container.seeking {
+  height: 131px;
+  width: 131px;
 }
 
 .img-container .close-button {
-  background-color: transparent;
-  border-radius: 14px;
-  border-width: 1px;
-  font-size: 16px;
-  height: 28px;
-  width: 28px;
+  display: none;
 }
 
-.img-container .close-button i {
-  border-width: 1px;
-  height: 26px;
-  line-height: 27px;
-  margin-left: 8px;
-  width: 26px;
-}
-
-.collab-symbol { 
+.symbol { 
+  border-radius: 5px;
+  box-shadow: 0px 3px 15px rgba(0,0,0,0.3);
+  border: 5px solid #8ab3a1;
   height: 263px;  
   width: 263px;
+}
+
+.symbol.seeking {
+  height: 131px;
+  width: 131px;
 }
 
 .social-icons {
   margin-bottom: 30px;
 }
 
-.social-icons a, 
-.social-icons a:hover, 
-.social-icons a:active {
-  color: #120029;
+.social-icons a {
+  color: #8ab3a1;
   font-size: 1.5em;
   margin-right: 15px;
+}
+
+.social-icons a:hover, .social-icons a:active {
+  color: #e9835d;
 }
 
 .social-icons a:last-child {
@@ -463,192 +564,3 @@ h1.animate {
 }
 
 
-/* ==========
-  MEDIA QUERY BREAKPOINTS
-========== */
-
-/* SMALLER BROWSER WIDTH */
-@media only screen and (max-width : 1120px) {
-  h1 {
-    font-size: 6.5rem;
-  }
-}
-
-/* TABLETS AND PHONES */
-@media only screen and (max-width : 1024px) {
-  
-  /* centering primary button for smaller screen widths */
-  .intro article {
-    text-align: center;
-  }
-
-  .intro ul {
-    text-align: left;
-  }
-
-  .intro .btn-primary {
-    margin-left: auto;
-  }
-
-  .img-container {
-    float: none;
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    margin-left: -132px;
-  }
-
-  .section.collaboration > article {
-    padding-bottom: 300px;
-    position: relative;
-  }
-
-  .wordpress-list a {
-    flex-wrap: wrap;
-  }
-
-  .wordpress-list .flex-img {
-    margin-bottom: 15px;
-  }
-
-  .wordpress-list .flex-text {
-    flex-basis: 100%;
-    margin-bottom: 35px;
-  }
-
-  .boxes {
-    justify-content: center
-  }
-  
-  .boxes li {
-    border-width: 2px;
-    font-size: 40px;
-    margin-right: 10px;
-    max-height: 80px;
-    max-width: 80px;
-    padding: 12px;
-  }
-
-}
-
-/* TABLETS -> PORTRAIT */
-@media only screen and (min-device-width: 768px) and (max-device-width : 1024px) and (orientation : portrait) {
-  
-  h1 {
-    font-size: 5.5rem;
-  }
-
-  .section {
-    width: 80%;
-  }
-
-  .section.collaboration, .section.seeking {
-    padding: 30px;
-  }
-
-  .profile-photo {
-    margin: 30px auto;
-  }
-
-}
-
-/* TABLETS -> LANDSCAPE */
-@media only screen and (min-device-width: 768px) and (max-device-width : 1024px) and (orientation : landscape) {
-
-  h1 {
-    font-size: 7.5rem;
-  }
-
-  /* RE-aligning primary button left for ipad landscape */
-  .intro article {
-    text-align: left;
-  }
-
-  .intro .btn-primary {
-    margin-left: 20px;
-  }
-
-  /* RE-sizing extracurricular boxes for ipad landscape */
-  .boxes {
-    justify-content: space-evenly;
-  }
-  
-  .boxes li {
-    border-width: 5px;
-    font-size: 120px;
-    margin-right: 50px;
-    max-height: none;
-    max-width: none;
-    padding: 40px;
-  }
-
-}
-
-/* PHONES */
-@media only screen and (max-width: 767px) {
-
-  header {
-    padding: 10px 0;
-  }
-
-  .header-logo {
-    height: 58px;
-    width: 118px;
-  }
-
-  header > h1 {
-    font-size: 2.38rem;
-    letter-spacing: 0.07em;
-  }
-
-  ul {
-    padding-left: 20px;
-  }
-
-  .profile-photo {
-    margin: 30px auto;
-  }
-
-  .container-fluid {
-    padding: 15px;
-  }
-
-  h3 {
-    font-size: 1.5rem;
-  }
-
-  .background-geometric {
-    background-size: 200px;
-  }
-
-  .section.collaboration, 
-  .section.seeking {
-    padding: 15px;
-  }
-
-  @media (min-device-width : 375px) {
-
-    header > h1 {
-      font-size: 2.84rem;
-    }
-
-  }
-
-  /* SMALLER PHONE WIDTH, e.g., IPHONE 5 */
-  @media only screen and (max-width : 320px) {
-
-    .btn-primary {
-      font-size: 1.3rem;
-    }
-
-    .wordpress-list .flex-img {
-      max-width: 280px;
-    }
-  
-    .wordpress-list .flex-text {
-      font-size: 1.2rem;
-    }
-
-  }
-
-}

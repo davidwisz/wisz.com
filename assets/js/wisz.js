@@ -1,5 +1,10 @@
-//TODO:
-//Color scheme switcher
+// IE11 POLYFILL/HACK TO SUPPORT forEach
+if(window.NodeList && !NodeList.prototype.forEach) {
+  NodeList.prototype.forEach = Array.prototype.forEach;
+}
+if(window.HTMLCollection && !HTMLCollection.prototype.forEach) {
+  HTMLCollection.prototype.forEach = Array.prototype.forEach;
+}
 
 const wisz = {
 
@@ -55,11 +60,15 @@ const wisz = {
 			document.getElementById('photo-modal-img').src = '/assets/img/loading.gif';
     }
     else if (clickeeHref == 'collab-symbol') {
-      document.getElementById('collab-symbol').style.animation = 'none';
+      document.getElementById('collabSymbol').style.animation = 'none';
       thisClickee.style.display = 'none';
     }
+    else if (clickeeHref == 'styleSwitchComponent') {
+      document.querySelector('.style-prompt').style.display = 'block';
+      document.querySelector('.style-component').classList.remove('reveal');
+    }
 		else {
-			document.getElementById(clickeeHref).style.display = 'none';
+      document.getElementById(clickeeHref).style.display = 'none';
 		}
   },
 
@@ -85,6 +94,55 @@ const wisz = {
       });
   },
 
+  initStyleSwitcher: function() {
+    let styleSwitcher = document.getElementById('styleSwitcher');
+    let chosenStyle = localStorage.getItem('alternateStyle');
+    if (chosenStyle && chosenStyle !== '0') {
+      wisz.switchStyle(chosenStyle);
+      styleSwitcher.selectedIndex = chosenStyle;
+    }
+    document.querySelector('.style-prompt').addEventListener('click', wisz.unhideStyleComponent);
+    styleSwitcher.addEventListener('change', function(event){wisz.switchStyle(event.target.value)});
+  },
+
+  unhideStyleComponent: function() {
+    document.querySelector('.style-component').classList.add('reveal');
+    document.querySelector('.style-prompt').style.display = 'none';
+  },
+
+  switchStyle: function(choice) {
+    let profilePhotoSrc = 'headshot-david-wisz-3.jpg';
+    let collabSymbolSrc = 'collaboration-symbol-blue.gif';
+    let seekingSymbolSrc = 'seeking-symbol-0.gif';
+    
+    
+    // LOAD THE ALTERNATE STYLESHEET
+    document.getElementById('alternateStyle').href =  '/assets/css/' + choice + '.css?v=3.1';
+
+    // DESIGNATE NEW IMG SRC FOR THE COLLABORATION SYMBOL
+    switch (choice) {
+      case '1':
+        collabSymbolSrc = 'collaboration-symbol-1.gif';
+        break;
+      case '2':
+        profilePhotoSrc = 'cartoon-haloween-skeleton-skull-spooky-icon-605972.png';
+        seekingSymbolSrc = 'weird-eyeballs.gif';
+        collabSymbolSrc = 'geometric-animation.gif';
+        break;
+      default:
+        profilePhotoSrc = 'headshot-david-wisz-3.jpg';
+        collabSymbolSrc = 'collaboration-symbol-0.gif';
+        seekingSymbolSrc = 'seeking-symbol-0.gif';
+        
+    }
+    document.getElementById('profilePhoto').setAttribute('src', '/assets/img/' + profilePhotoSrc);
+    document.getElementById('seekingSymbol').setAttribute('src', '/assets/img/' + seekingSymbolSrc);
+    document.getElementById('collabSymbol').setAttribute('src', '/assets/img/' + collabSymbolSrc);
+    if (localStorage.getItem('alternateStyle') !== choice) {
+      localStorage.setItem('alternateStyle',choice);
+    }
+  },
+
 	copyrightDate: function() {
   	document.getElementById('year').innerHTML = new Date().getFullYear();
   },
@@ -106,7 +164,6 @@ const wisz = {
     }
   }
   
-
 }
 
 // AFTER DOM IS LOADED
@@ -114,19 +171,26 @@ document.addEventListener('DOMContentLoaded', function() {
   if (document.fonts) {
     document.fonts.ready.then(function () {
       let targets = document.querySelectorAll('.above-fold');
-      targets.forEach((target) => target.classList.add('animate'));
+      targets.forEach(function(target) {
+        target.classList.add('animate')
+      });
     });
   }
   else {
     wisz.ieWorkaround('.above-fold');
   }
 
+  // POPULATE WORDPRESS PORTFOLIO SECTION
   if (document.location.hash === '#wordpress' || localStorage.getItem('portfolio') === 'wordpress') {
     document.querySelector('.portfolio-container').style.display = 'block';
     let yPos = wisz.findYPos(document.getElementById('portfolio'));
     wisz.populatePortfolio('/wordpress.html', yPos[0]);
   }
   
+  //INIT STYLE SWITCHER
+  wisz.initStyleSwitcher();
+
+
 	//CLICK HANDLER TO OPEN PHOTO POPOVER
 	wisz.assignPhotoClickHandlers('.photo-trigger', 'photo-trigger')
 	
