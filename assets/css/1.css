@@ -1,0 +1,189 @@
+/* TABLE OF CONTENTS 
+  1. GLOBAL STYLES
+  2. TYPOGRAPHY
+  3. COLOR SCHEMES
+  4. COMPONENTS
+*/
+
+/* ==========
+  GLOBAL STYLES
+========== */
+
+body {
+  font-family: "AvenirNext", Arial, Helvetica, sans-serif;
+  font-size: 1.4rem;
+}
+
+
+/* ==========
+  TYPOGRAPHY
+========== */
+
+h1 {
+  font-family: "Bungee Shade", Arial, Helvetica;
+  font-size: 8.5rem;
+  letter-spacing: .05em;
+  text-shadow: none;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-family: "AvenirNext", Arial, Helvetica, sans-serif;
+}
+
+
+/* ==========
+  COLOR SCHEMES
+========== */
+
+.boxes li {
+  background-color: #fbe076;
+  border-color: #120029;
+  color: #120029;
+}
+
+.boxes li:hover {
+  border-color: #fff;
+  color: #fff;
+}
+
+.photo-modal {
+  background-color: #aee2d4;
+  border-color: #120029;
+}
+
+.photo-modal-img {
+  border-color: #fff;
+}
+
+.photo-modal .boxes li {
+  background-color: #fff;
+  border-color: #120029;
+  color: #120029;
+}
+
+.photo-modal .boxes li:hover {
+  border-color: #fbe076;
+  color: #fbe076;
+}
+
+.color-scheme-one, .color-scheme-one.gradient {
+  background: #120029;
+}
+
+.color-scheme-three, 
+.color-scheme-three code  {
+  background-color: #fbe076;
+  color: #120029;
+}
+
+.fa-bg:before {
+  color: #eed677;
+}
+
+.color-scheme-four, 
+.color-scheme-four code {
+  background-color: #aee2d4;
+  color: #120029;
+}
+
+.background-geometric {
+  background-attachment: fixed;
+  background-image: url(/assets/img/background-geometric.png);
+  background-position: 0 20px;
+  background-size: 600px;
+}
+
+.wordpress-list a, .wordpress-list a:hover, .wordpress-list a:active {
+  color: #120029;
+}
+
+.wordpress-list a:hover img, .wordpress-list a:active img {
+  border-color: #fff;
+}
+
+
+/* ==========
+  COMPONENTS
+========== */
+
+.btn-primary {
+  background-color: #fbe076;
+  border-color: #fbe076;
+  color: #120029;
+}
+
+.btn-primary:focus, 
+.btn-primary:hover, 
+.btn-primary.active, 
+.btn-primary:active, 
+.btn-primary:not(:disabled):not(.disabled).active, 
+.btn-primary:not(.disabled).active, 
+.btn-primary:not(:disabled):not(.disabled):active, 
+.btn-primary:not(.disabled):active {
+  background-color: #fad339;
+  border-color: #fad339;
+  color: #120029;
+}
+
+.profile-photo {
+  border-color: #fff;
+}
+
+.img-container {
+  margin: 30px 90px 10px 10px;
+}
+.symbol {
+  border-color: #fff;
+}
+
+.symbol.collab {
+  border-radius: 0;
+  box-shadow: none;
+  border: none;
+}
+
+.img-container .close-button {
+  background-color: transparent;
+  border-radius: 14px;
+  border-width: 1px;
+  display: inline-block;
+  font-size: 16px;
+  height: 28px;
+  width: 28px;
+}
+
+.img-container .close-button i {
+  border-width: 1px;
+  height: 26px;
+  line-height: 27px;
+  margin-left: 8px;
+  width: 26px;
+}
+
+.social-icons a, .social-icons a:hover, .social-icons a:active {
+  color: #120029;
+}
+
+
+/* ==========
+  ANIMATIONS
+========== */
+
+.rotate {
+  animation: rotate 45s infinite linear;
+}
+
+.rotate:hover {
+  animation: none;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+

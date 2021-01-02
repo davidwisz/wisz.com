@@ -1,0 +1,204 @@
+/* TABLE OF CONTENTS 
+  1. GLOBAL STYLES
+  2. TYPOGRAPHY
+  3. COLOR SCHEMES
+  4. COMPONENTS
+*/
+
+/* ==========
+  GLOBAL STYLES
+========== */
+
+body {
+  font-family: "Open Sans", Arial, Helvetica, sans-serif;
+  font-size: 1.4rem;
+}
+
+
+/* ==========
+  TYPOGRAPHY
+========== */
+
+h1 {
+  font-family: "Trade Winds", Arial, Helvetica;
+  font-size: 6.5rem;
+  letter-spacing: normal;
+  text-shadow: none;
+}
+
+h3 {
+  font-family: "Trade Winds", Arial, Helvetica, sans-serif;
+}
+
+
+/* ==========
+  COLOR SCHEMES
+========== */
+
+.color-scheme-one, .color-scheme-one.gradient, .color-scheme-three, .color-scheme-three code, .color-scheme-four, .color-scheme-four code {
+  background: #000;
+  color: #fff;
+}
+
+.section.collaboration, .section.seeking {
+  border: 1px solid #fff;
+  border-radius: 35px;
+}
+
+.fa-bg:before {
+  color: #333;
+}
+
+.background-geometric {
+  background-attachment: fixed;
+  background-image: url(/assets/img/background-geometric-zodiac.jpg);
+  background-position: 0 20px;
+  background-size: 750px;
+}
+
+.wordpress-list a, .wordpress-list a:hover, .wordpress-list a:active {
+  color: #fff;
+}
+
+.wordpress-list a:hover img, .wordpress-list a:active img {
+  border-color: #7c0331;
+}
+
+
+/* ==========
+  COMPONENTS
+========== */
+
+.btn-primary {
+  background-color: #7c0331;
+  border-color: #7c0331;
+  color: #fff;
+}
+
+.btn-primary:focus, 
+.btn-primary:hover, 
+.btn-primary.active, 
+.btn-primary:active, 
+.btn-primary:not(:disabled):not(.disabled).active, 
+.btn-primary:not(.disabled).active, 
+.btn-primary:not(:disabled):not(.disabled):active, 
+.btn-primary:not(.disabled):active {
+  background-color: #7c0331;
+  border-color: #fff;
+  color: #fff;
+}
+
+a:not([href]).close-button {
+  color: #7c0331;
+}
+
+.profile-photo {
+  border: none;
+}
+
+.img-container.seeking {
+  height: 300px;
+  margin: 0 20px 10px 10px;
+  overflow: hidden;
+  width: 300px;
+}
+
+.symbol {
+  border-color: #fff;
+}
+
+.symbol.collab {
+  border-radius: 0;
+  border: 1px solid #fff;
+  box-shadow: none;
+}
+
+.symbol.seeking {
+  border: none;
+  height: 400px;
+  margin-left: -40px;
+  margin-top: -100px;
+  width: 400px;
+}
+
+.boxes li {
+  border-radius: 30px;
+}
+
+.boxes li, .photo-modal .boxes li {
+  background-color: #000;
+  border-color: #fff;
+  border-width: 1px;
+  color: #fff;
+}
+
+.boxes li:hover, .photo-modal .boxes li:hover {
+  border-color: #7c0331;
+  color: #7c0331;
+}
+
+.photo-modal {
+  background-color: #000;
+  border-color: #fff;
+  border-radius: 30px;
+}
+
+.photo-modal-img {
+  border: none;
+  border-radius: 0 0 30px 30px;
+  border-top: 1px solid #fff;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+.social-icons a, .social-icons a:hover, .social-icons a:active {
+  color: #7c0331;
+}
+
+@media only screen and (max-width : 1024px) {
+
+  .seeking .img-container.seeking {
+    height: 131px;
+    margin-left: -110px;
+    width: 220px;
+  }
+
+  .symbol.seeking {
+    height: 260px;
+    margin: -55px auto 0 -20px;
+    width: 260px;
+  }
+
+  .boxes li, .photo-modal {
+    border-radius: 10px;
+  }
+
+  .photo-modal-img {
+    border-radius: 0 0 10px 10px;
+  }
+
+}
+
+
+/* ==========
+  ANIMATIONS
+========== */
+/*
+.rotate {
+  animation: rotate 45s infinite linear;
+}
+
+.rotate:hover {
+  animation: none;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+*/
+

@@ -1,0 +1,221 @@
+/* ==========
+  MEDIA QUERY BREAKPOINTS
+========== */
+
+/* SMALLER BROWSER WIDTH */
+@media only screen and (max-width : 1120px) {
+  h1 {
+    font-size: 6.5rem;
+  }
+}
+
+/* TABLETS AND PHONES */
+@media only screen and (max-width : 1024px) {
+  
+  .style-switcher-container {
+    right: 3px;
+    top: 3px;
+  }
+
+  .style-component {
+    font-size: .85rem;
+  }
+
+  .style-switcher {
+    font-size: 1rem;
+    margin-left: 2px;
+    max-width: 125px;
+  }
+
+  /* centering primary button for smaller screen widths */
+  .intro article {
+    text-align: center;
+  }
+
+  .profile-photo {
+    margin: 30px auto;
+  }
+
+  .intro article {
+    max-width: 100%;
+  }
+
+  .intro ul {
+    text-align: left;
+  }
+
+  .intro .btn-primary {
+    margin-left: auto;
+  }
+
+  .img-container {
+    float: none;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    margin-left: -132px;
+  }
+
+  .seeking .img-container {
+    margin-left: -64px;
+  }
+
+  .section.collaboration, .section.seeking {
+    border-radius: 5px;
+  }
+
+  .section.collaboration > article {
+    padding-bottom: 300px;
+    position: relative;
+  }
+
+  .section.seeking > article {
+    padding-bottom: 150px;
+    position: relative;
+  }
+
+  .wordpress-list a {
+    flex-wrap: wrap;
+  }
+
+  .wordpress-list .flex-img {
+    margin-bottom: 15px;
+  }
+
+  .wordpress-list .flex-text {
+    flex-basis: 100%;
+    margin-bottom: 35px;
+  }
+
+  .boxes {
+    justify-content: center
+  }
+  
+  .boxes li {
+    border-width: 2px;
+    font-size: 40px;
+    margin-right: 10px;
+    max-height: 80px;
+    max-width: 80px;
+    padding: 12px;
+  }
+
+}
+
+/* TABLETS -> PORTRAIT */
+@media only screen and (min-device-width: 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+  
+  h1 {
+    font-size: 5.5rem;
+  }
+
+  .section {
+    width: 80%;
+  }
+
+  .section.collaboration, .section.seeking {
+    padding: 30px;
+  }
+
+}
+
+/* TABLETS -> LANDSCAPE */
+@media only screen and (min-device-width: 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+
+  h1 {
+    font-size: 7.5rem;
+  }
+
+  /* RE-aligning primary button left for ipad landscape */
+  .intro article {
+    text-align: left;
+  }
+
+  .intro .btn-primary {
+    margin-left: 20px;
+  }
+
+  /* RE-sizing extracurricular boxes for ipad landscape */
+  .boxes {
+    justify-content: space-evenly;
+  }
+  
+  .boxes li {
+    border-width: 5px;
+    font-size: 120px;
+    margin-right: 50px;
+    max-height: none;
+    max-width: none;
+    padding: 40px;
+  }
+
+}
+
+/* PHONES */
+@media only screen and (max-width: 767px) {
+
+  header {
+    padding: 25px 0;
+  }
+
+  .header-logo {
+    height: 58px;
+    width: 118px;
+  }
+
+  header > h1 {
+    font-size: 2.38rem;
+    letter-spacing: 0.07em;
+  }
+
+  ul {
+    padding-left: 20px;
+  }
+
+  .profile-photo {
+    margin: 30px auto;
+  }
+
+  .container-fluid {
+    padding: 15px;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  .background-geometric {
+    background-size: 200px;
+  }
+
+  .section.collaboration, 
+  .section.seeking {
+    padding: 15px;
+  }
+
+  @media (min-device-width : 375px) {
+
+    header > h1 {
+      font-size: 2.84rem;
+    }
+
+  }
+
+  /* SMALLER PHONE WIDTH, e.g., IPHONE 5 */
+  @media only screen and (max-width : 320px) {
+
+    .btn-primary {
+      font-size: 1.3rem;
+    }
+
+    .wordpress-list .flex-img {
+      max-width: 280px;
+    }
+  
+    .wordpress-list .flex-text {
+      font-size: 1.2rem;
+    }
+
+  }
+
+}
