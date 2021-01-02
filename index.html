@@ -7,7 +7,8 @@
   <meta name="description" content="Front end web developer with broad experience working in React, JSP, PHP, Python/Flask, Node/Express, Ruby on Rails, and WordPress.">
   <title>David Wisz - Front End Web Developer - San Francisco</title>
   <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@469&family=Pacifico&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Oswald:wght@200&family=Pacifico&family=Roboto&family=Trade+Winds&family=Open+Sans&display=swap" rel="stylesheet">
   <link rel="preload" href="/assets/fonts/AvenirNext-Regular.woff2" as="font" crossorigin="">
   <link rel="preload" href="/assets/fonts/AvenirNext-Bold.woff2" as="font" crossorigin="">
   <link rel="preload" href="/assets/fonts/AvenirNext-Regular.woff" as="font" crossorigin="">
@@ -45,7 +46,9 @@
       src: url("/assets/fonts/AvenirNext-Bold.woff2") format("woff2"), url("/assets/fonts/AvenirNext-Bold.woff") format("woff")
     }
   </style>
-  <link rel="stylesheet" type="text/css" href="assets/css/wisz.css?v=3" />
+  <link rel="stylesheet" type="text/css" href="assets/css/wisz.css?v=5.1" />
+  <link rel="stylesheet" type="text/css" id="alternateStyle" />
+  <link rel="stylesheet" type="text/css" href="assets/css/media_queries.css?v=3.1" />
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-172044436-1"></script>
@@ -88,8 +91,24 @@
 
 <body>
 
-  <header class="color-scheme-one">
-    <h1 class="above-fold">DAVID WISZ</h1>
+  <header class="color-scheme-one gradient" id="header">
+    <div class="style-switcher-container" id="styleSwitchContainer">
+      <span class="style-prompt">Style switch?</span>
+      <div class="style-component" id="styleSwitchComponent">
+        Choose a different style: 
+        <select class="style-switcher" id="styleSwitcher">
+          <option value="0" class="style-0">1. Straightforward</option>
+          <option value="1" class="style-1">2. Lighthearted</option>
+          <option value="2" class="style-2">3. Eerie</option>
+          <!--
+          <option value="3" class="style-3">4. Outdoorsy</option>
+          <option value="4" class="style-4">5. Efficient</option>
+          -->
+        </select>
+        <a class="close-button" data-href="styleSwitchComponent"><i class="fas fa-times" alt="Close" title="Close"></i></a>
+      </div>
+    </div>
+    <h1 class="above-fold">David Wisz</h1>
   </header>
 
   <main>
@@ -100,16 +119,16 @@
         <h3 class="heading-main above-fold">Senior Front End Web Developer</h3>
         <article class="above-fold">
           <ul>
-            <li>15+ years experience building professional websites</li>
+            <li>15+ years building professional websites</li>
             <li>Expert level CSS and JavaScript</li>
-            <li>Experience coding in many different stacks, including React, Node, Python, PHP, Ruby on Rails, JSP, .NET, WordPress
+            <li>Experience coding in many different stacks, including React, Node.JS, Python, PHP, Ruby on Rails, JSP, .NET, WordPress
             </li>
             <li>Expert ability to convert mockups into UI code</li>
             <li>Performance optimization, SEO, Google Analytics, A/B testing, event tracking</li>
           </ul>
           <a href="/DavidWiszResume.pdf" class="btn btn-primary" title="David Wisz's resumé">Download Resumé</a>
         </article>
-        <img src="/assets/img/headshot-david-wisz-3.jpg" class="profile-photo above-fold" alt="David Wisz's profile photo" />
+        <img src="/assets/img/headshot-david-wisz-3.jpg" id="profilePhoto" class="profile-photo above-fold" alt="David Wisz's profile photo" />
         <br class="clear" />
       </section>
     </div>
@@ -119,10 +138,13 @@
       <section class="section color-scheme-four seeking scroll-in" id="seeking">
         <h3 class="heading-main">What I'm Looking For</h3>
         <article>
+          <figure class="img-container seeking">
+            <img src="/assets/img/seeking-symbol-0.gif" class="symbol seeking" id="seekingSymbol" alt="thumbs-up icon" />
+          </figure>
           <ul>
             <li>Technical problem-solving projects with learning opportunities, especially to get more experience with React.
             </li>
-            <li>A smart team with a well organized process, from roadmaps to deployments.</li>
+            <li>A smart team with an organized process.</li>
             <li>Seasoned tech leadership.</li>
           </ul>
         </article>
@@ -133,7 +155,7 @@
     <div class="container-fluid color-scheme-three">
       <section class="section skills scroll-in" id="skills">
         <h3 class="heading-main">Technical Background and Skills</h3>
-        <article>
+        <article class="fa-bg">
           <p>
             I have over 15 years' experience writing <strong>HTML</strong>, <strong>CSS</strong> and
             <strong>JavaScript</strong>. I have worked with many platforms and frameworks: React, Python, Node, Flask, Express, Ruby on Rails, JSP, PHP, .NET, and WordPress.
@@ -154,13 +176,15 @@
             <li>WordPress optimization.</li>
             <li>All kinds of general PHP hackery.</li>
           </ul>
+        </article>
 
+        <article class="fa-bg more-skills">
           <p>
             I also know all about:
           </p>
 
           <ul>
-            <li>jQuery.</li>
+            <li>Vanilla JavaScript and jQuery.</li>
             <li>Site optimization for page performance.</li>
             <li>Version control: SVN, CVS, git, and github.</li>
             <li>Bug and story tracking in Bugzilla, JIRA, Pivotal Tracker, and LiquidPlanner.</li>
@@ -171,9 +195,8 @@
           </ul>
 
           <p>
-            I recently completed a full stack web developer boot camp where I learned Node, Python, and React. I am currently working on fleshing out a portfolio of React front end projects with Node API's.
+            I recently completed a full stack web developer boot camp where I learned Node, Python, and React. I am currently working on fleshing out a portfolio of React front end projects with Node APIs.
           </p>
-          
         </article>
       </section>
     </div>
@@ -184,7 +207,7 @@
         <h3 class="heading-main">Valuable Team Member</h3>
         <article>
           <figure class="img-container" id="img-container">
-            <img src="/assets/img/collaboration-symbol-blue.gif" class="collab-symbol rotate" id="collab-symbol" alt="animated collaboration symbol" />
+            <img src="/assets/img/collaboration-symbol-0.gif" class="symbol collab rotate" id="collabSymbol" alt="animated collaboration symbol" />
             <a class="close-button" data-href="collab-symbol"><i class="fas fa-times" alt="Pause" title="Pause"></i></a>
           </figure>
           <ul>
@@ -239,20 +262,24 @@
     </section>
   </footer>
 
-  <script async src="https://kit.fontawesome.com/8fface612f.js" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/f48a0ec9e4.js" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-  <script src="assets/js/wisz.js?v=2"></script>
+  <script src="assets/js/wisz.js?v=3"></script>
   <script>
-    if (window.IntersectionObserver) {
-      let script = document.createElement('script');
-      script.src = 'assets/js/scroll-animation.js';
-      document.body.append(script);
-    }
-    else {
-      wisz.ieWorkaround('.scroll-in');
-    }
+    // AFTER DOM IS LOADED
+    document.addEventListener('DOMContentLoaded', function() {
+      if (window.IntersectionObserver) {
+        let thisScript = document.createElement('script');
+        thisScript.src = 'assets/js/scroll-animation.js';
+        document.body.appendChild(thisScript);
+        
+      }
+      else {
+        wisz.ieWorkaround('.scroll-in');
+      }
+    });
   </script>
 
 </body>
 
-</html>
+</html> 
